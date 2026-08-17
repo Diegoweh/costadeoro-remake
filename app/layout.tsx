@@ -1,19 +1,28 @@
 import type { Metadata } from "next";
-import { Nunito_Sans, Libre_Baskerville } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
-const nunitoSans = Nunito_Sans({
-  variable: "--font-nunito-sans",
-  subsets: ["latin"],
+const royaleCoutureSans = localFont({
+  src: "./fonts/RoyaleCouture-Sans.ttf",
+  variable: "--font-royale-sans",
+  weight: "400",
+  display: "swap",
 });
 
-const libreBaskerville = Libre_Baskerville({
-  variable: "--font-libre-baskerville",
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
+const royaleCoutureSerif = localFont({
+  src: "./fonts/RoyaleCouture-Serif.ttf",
+  variable: "--font-royale-serif",
+  weight: "400",
+  display: "swap",
+});
+
+const goldenHopes = localFont({
+  src: "./fonts/GoldenHopes.ttf",
+  variable: "--font-golden-hopes",
+  weight: "400",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${nunitoSans.variable} ${libreBaskerville.variable} h-full antialiased`}
+      className={`${royaleCoutureSans.variable} ${royaleCoutureSerif.variable} ${goldenHopes.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col overflow-x-hidden font-sans text-brand-ink">
         <Navbar />

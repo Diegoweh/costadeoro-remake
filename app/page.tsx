@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AmenitiesSlider } from "@/components/amenities-slider";
 import { Container } from "@/components/container";
 import { PromoSlider } from "@/components/promo-slider";
 
@@ -8,6 +9,12 @@ const AMENITIES = [
   { icon: "/images/iconos/boda.svg", label: "BODAS & BANQUETES" },
   { icon: "/images/iconos/alberca.svg", label: "ALBERCA, PALAPAS Y CAMASTROS" },
   { icon: "/images/iconos/star.svg", label: "TODO INCLUIDO" },
+];
+
+const AMENITY_SLIDES = [
+  { src: "/images/slide-1.webp", alt: "Amenidades del hotel 1" },
+  { src: "/images/slide-2.m.webp", alt: "Amenidades del hotel 2" },
+  { src: "/images/slide-3.webp", alt: "Amenidades del hotel 3" },
 ];
 
 const PROMO_SLIDES = [
@@ -28,16 +35,22 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative flex h-[100dvh] min-h-[520px] w-full items-center justify-center overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source src="/video/horizontal.mp4" type="video/mp4" media="(min-width: 769px)" />
-          <source src="/video/vertical.mp4" type="video/mp4" media="(max-width: 768px)" />
-        </video>
+        <Image
+          src="/images/hero-desckpot.webp"
+          alt=""
+          fill
+          fetchPriority="high"
+          sizes="100vw"
+          className="hidden object-cover md:block"
+        />
+        <Image
+          src="/images/hero-mobile.m.webp"
+          alt=""
+          fill
+          fetchPriority="high"
+          sizes="100vw"
+          className="object-cover md:hidden"
+        />
         <div className="absolute inset-0 bg-black/10" />
       </section>
 
@@ -78,11 +91,9 @@ export default function Home() {
 
       {/* Nuestras amenidades */}
       <section className="flex flex-col md:flex-row">
-        <div
-          className="relative h-[320px] w-full bg-cover bg-center md:h-auto md:min-h-[560px] md:w-1/2"
-          style={{ backgroundImage: "url(/images/index/alberca.webp)" }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-brand-beige-dark/20" />
+        <div className="relative h-[320px] w-full md:h-auto md:min-h-[560px] md:w-1/2">
+          <AmenitiesSlider slides={AMENITY_SLIDES} />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-brand-beige-dark/20" />
         </div>
         <div className="flex w-full flex-col justify-center bg-brand-beige-dark px-6 py-14 sm:px-10 md:w-1/2 md:px-14 md:py-16">
           <p className="mb-2 text-xs font-semibold tracking-[0.3em] text-brand-gold-dark sm:text-sm">

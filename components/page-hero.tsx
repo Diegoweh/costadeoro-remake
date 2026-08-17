@@ -4,11 +4,15 @@ export function PageHero({
   image,
   title,
   eyebrow,
+  eyebrowClassName,
+  titleClassName,
   priority = false,
 }: {
   image: string;
   title: string;
   eyebrow?: string;
+  eyebrowClassName?: string;
+  titleClassName?: string;
   priority?: boolean;
 }) {
   return (
@@ -16,8 +20,17 @@ export function PageHero({
       <Image src={image} alt="" fill priority={priority} className="object-cover" sizes="100vw" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/40" />
       <div className="relative text-center text-white">
-        {eyebrow && <p className="mb-2 text-sm font-semibold tracking-[0.25em] uppercase text-white/80">{eyebrow}</p>}
-        <h1 className="font-serif text-4xl italic sm:text-5xl lg:text-6xl">{title}</h1>
+        {eyebrow && (
+          <p
+            className={
+              eyebrowClassName ??
+              "mb-2 text-sm font-semibold tracking-[0.25em] uppercase text-white/80"
+            }
+          >
+            {eyebrow}
+          </p>
+        )}
+        <h1 className={titleClassName ?? "font-serif text-4xl italic sm:text-5xl lg:text-6xl"}>{title}</h1>
       </div>
     </section>
   );

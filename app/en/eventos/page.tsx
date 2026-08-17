@@ -20,7 +20,14 @@ const SPACES = [
 export default function EventosPageEn() {
   return (
     <>
-      <PageHero image="/images/eventos/bacground.webp" eyebrow="Hotel Costa de Oro" title="Events" priority />
+      <PageHero
+        image="/images/eventos/bacground.webp"
+        eyebrow="The ideal setting"
+        eyebrowClassName="mb-2 font-script text-6xl text-white/90 sm:text-7xl lg:text-8xl"
+        title="Unforgettable moments and stories"
+        titleClassName="font-serif text-4xl not-italic sm:text-5xl lg:text-6xl"
+        priority
+      />
 
       <section className="bg-[#909986]">
         <AlternatingFeature image="/images/eventos/boda.webp" imageAlt="Weddings at Costa de Oro">

@@ -10,7 +10,14 @@ export const metadata: Metadata = {
 export default function TodoIncluidoPage() {
   return (
     <>
-      <PageHero image="/images/todoin/HEADER (1).webp" eyebrow="Hotel Costa de Oro" title="Todo Incluido" priority />
+      <PageHero
+        image="/images/todoin/HEADER (1).webp"
+        eyebrow="sin preocupaciones"
+        eyebrowClassName="mb-2 font-script text-6xl text-white/90 sm:text-7xl lg:text-8xl"
+        title="tu descanso empieza aquí"
+        titleClassName="font-serif text-4xl not-italic sm:text-5xl lg:text-6xl"
+        priority
+      />
 
       <section
         className="bg-cover bg-center px-4 py-16 text-center sm:py-20"

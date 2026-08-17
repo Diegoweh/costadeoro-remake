@@ -32,8 +32,9 @@
   --color-brand-ink: var(--color-brand-ink);
   --color-brand-ink-soft: var(--color-brand-ink-soft);
 
-  --font-sans: var(--font-nunito-sans);
-  --font-serif: var(--font-libre-baskerville);
+  --font-sans: var(--font-royale-sans);
+  --font-serif: var(--font-royale-serif);
+  --font-script: var(--font-golden-hopes);
 }
 
 body {

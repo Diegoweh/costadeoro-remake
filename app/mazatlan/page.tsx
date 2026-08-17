@@ -103,7 +103,14 @@ const ATTRACTIONS = [
 export default function MazatlanPage() {
   return (
     <>
-      <PageHero image="/images/mazatlan/background1900px.png" eyebrow="Descubre" title="Mazatlán" priority />
+      <PageHero
+        image="/images/mazatlan/background1900px.png"
+        eyebrow="Descubre"
+        eyebrowClassName="mb-2 font-script text-6xl text-white/90 sm:text-7xl lg:text-8xl"
+        title="Mazatlán"
+        titleClassName="font-serif text-4xl not-italic sm:text-5xl lg:text-6xl"
+        priority
+      />
 
       {ATTRACTIONS.map((item) => (
         <section key={item.title} className={item.band}>

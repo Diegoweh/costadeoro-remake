@@ -55,7 +55,14 @@ const RESTAURANTS = [
 export default function RestaurantePage() {
   return (
     <>
-      <PageHero image="/images/gastronomia/res-back.webp" eyebrow="Hotel Costa de Oro" title="Restaurantes" priority />
+      <PageHero
+        image="/images/gastronomia/res-back.webp"
+        eyebrow="Sabores"
+        eyebrowClassName="mb-2 font-script text-6xl text-white/90 sm:text-7xl lg:text-8xl"
+        title="frente al mar"
+        titleClassName="font-serif text-4xl not-italic sm:text-5xl lg:text-6xl"
+        priority
+      />
 
       <section className="bg-white">
         {RESTAURANTS.map((r, i) => (
